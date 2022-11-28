@@ -1,0 +1,33 @@
+--Create a Store database
+
+CREATE TABLE Fishing_Supplies (id INTEGER PRIMARY KEY, name Text, color TEXT, price INTEGER, Identifier TEXT);
+
+INSERT INTO fishing_supplies VALUES (1, "Spinning combo", "Black", 15.99, "Pole");
+INSERT INTO fishing_supplies VALUES (2, "Baitcaster combo", "Black", 20.99, "Pole");
+INSERT INTO fishing_supplies VALUES (3, "Bobber pole combo", "Silver", 10.99, "Pole");
+INSERT INTO fishing_supplies VALUES (4, "5/0 hooks", "Black", 5.99, "Hooks");
+INSERT INTO fishing_supplies VALUES (5, "3/0 hooks", "Silver", 5.99, "Hooks");
+INSERT INTO fishing_supplies VALUES (6, "1/0 hooks", "Silver", 5.99, "Hooks");
+INSERT INTO fishing_supplies VALUES (7, "Wacky Works", "Green Pumpkin", 2.99, "Lure");
+INSERT INTO fishing_supplies VALUES (8, "SpinnerBait", "White", 7.99, "Lure");
+INSERT INTO fishing_supplies VALUES (9, "Rattle Trap", "Crawdad", 8.99, "Lure");
+INSERT INTO fishing_supplies VALUES (10, "Jerkbait", "Perch", 8.99, "Lure");
+INSERT INTO fishing_supplies VALUES (11, "Chatterbait", "White", 5.99, "Lure");
+INSERT INTO fishing_supplies VALUES (12, "Frog", "Green", 4.99, "Lure");
+INSERT INTO fishing_supplies VALUES (13, "Swimbait", "Bluegill", 14.99, "Lure");
+INSERT INTO fishing_supplies VALUES (14, "A-Rig", "Silver", 16.99, "Lure");
+INSERT INTO fishing_supplies VALUES (15, "Pack o'Worms", "Natural", 3.99, "Lure");
+
+--Display the database ordered by price
+SELECT * FROM Fishing_Supplies
+ORDER BY price desc;
+
+--what it the average price of the items in the store
+SELECT AVG(price) "avg lure identifier price"
+FROM Fishing_Supplies
+where section='Lure';
+
+--What are the lowest priced lures?
+SELECT * FROM Fishing_Supplies 
+WHERE price>20.99 
+ORDER BY price DESC;
